@@ -24,12 +24,8 @@ export default class MyDocument extends Document {
 
           <meta name="theme-color" content={palette.light.primary.main} />
 
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
-
-          <link
-            href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap"
-            rel="stylesheet"
-          />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet" />
 
           <meta
             name="description"

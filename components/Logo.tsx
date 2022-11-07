@@ -18,7 +18,7 @@ const Logo:FC<Props> = ({ disabledLink = false, sx }) => {
 
   const logo = (
     <Box sx={{ width: 48, height: 48, cursor: 'pointer', ...sx }}>
-    
+
     </Box>
   );
 
