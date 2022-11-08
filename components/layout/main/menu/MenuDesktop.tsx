@@ -19,6 +19,7 @@ const LinkStyle = styled(Link)(({ theme }) => ({
     opacity: 0.48,
     textDecoration: 'none',
   },
+  fontWeight:500
 }));
 
 // ----------------------------------------------------------------------

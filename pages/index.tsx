@@ -1,12 +1,15 @@
 import { NextPage } from 'next';
-import {MainLayout} from '../components';
+import {MainLayout, Page} from '../components';
+import { HomeHero } from '../sections';
 
 
 
 const Home:NextPage = () => {
   return (
     <MainLayout>
-      hola
+      <Page title={'Home'}>
+        <HomeHero />
+      </Page>
     </MainLayout>
   )
 }

@@ -3,10 +3,10 @@ import { Link, Stack, Button, Tooltip, IconButton, ButtonProps, IconButtonProps,
 import Iconify from './Iconify';
 
 export type SocialLinks = {
-  facebook?: string;
-  instagram?: string;
-  linkedin?: string;
-  twitter?: string;
+  github?         :string;
+  instagram?      :string;
+  linkedin?       :string;
+  twitter?        :string;
 };
 
 type IProps = IconButtonProps & ButtonProps;
@@ -21,20 +21,20 @@ export default function SocialsButton({
   initialColor = false,
   simple = true,
   links = {
-    twitter:'https://twitter.com/esgbaycom',
-    linkedin:'https://www.linkedin.com/company/esg-bay/',
-    facebook:'https://www.facebook.com/ESG-Bay-103481072493772/?__cft__[0]=AZXI-iXv9OjCFWRnUaVU1Zytx2NCvaiPnnLILu_gmOwO048uGUGLnm0WZEu6X2BqHbP1wjPnVR_lk2V25A7MgE3cGKl0BE4tJuMSX6gPXkS9kfomCR0FzpFLYDclMNLl7pkSCwX8rntk7C0hQqFfXw44frJaFeER9oh8uRJEvDrwIQ&__tn__=%2CmH-R',
-    instagram:'https://instagram.com/esgbay'
+    twitter:'https://twitter.com/TotoDiez7',
+    linkedin:'https://www.linkedin.com/in/lorenzotomasdiez/',
+    github:'https://github.com/lorenzotomasdiez',
+    instagram:'https://instagram.com/totodiez'
   },
   sx,
   ...other
 }: Props) {
   const SOCIALS = [
     {
-      name: 'FaceBook',
-      icon: 'eva:facebook-fill',
+      name: 'Github',
+      icon: 'eva:github-fill',
       socialColor: '#1877F2',
-      path: links.facebook || '#facebook-link',
+      path: links.github || '#github-link',
     },
     {
       name: 'Instagram',

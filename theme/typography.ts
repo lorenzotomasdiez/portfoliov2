@@ -2,14 +2,14 @@ import { pxToRem, responsiveFontSizes } from '../utils/getFontValue';
 
 // ----------------------------------------------------------------------
 
-const FONT_PRIMARY = 'Public Sans, sans-serif'; // Google Font
+const FONT_PRIMARY = 'Kanit, sans-serif;'; // Google Font
 // const FONT_SECONDARY = 'CircularStd, sans-serif'; // Local Font
 
 const typography = {
   fontFamily: FONT_PRIMARY,
   fontWeightRegular: 400,
-  fontWeightMedium: 600,
-  fontWeightBold: 700,
+  fontWeightMedium: 500,
+  fontWeightBold: 600,
   h1: {
     fontWeight: 700,
     lineHeight: 80 / 64,
@@ -70,7 +70,7 @@ const typography = {
     fontSize: pxToRem(12),
   },
   overline: {
-    fontWeight: 700,
+    fontWeight: 500,
     lineHeight: 1.5,
     fontSize: pxToRem(12),
     textTransform: 'uppercase',

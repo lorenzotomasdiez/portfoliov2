@@ -1,5 +1,5 @@
 import { Box, Container, Typography } from "@mui/material"
-import { Logo } from "../../../../components"
+import { FullLogo } from "../../../../components"
 
 export const BasicFooter = () => {
     return (
@@ -12,7 +12,7 @@ export const BasicFooter = () => {
         }}
       >
         {<Container>
-          <Logo sx={{ mb: 1, mx: 'auto' }} />
+          <FullLogo sx={{ mb: 1, mx: 'auto' }} />
           <Typography variant="overline" fontSize={10} component="p">
             All Rights Reserved | Copyright © 2022
             <br /> made by ESG Bay Ltd
