@@ -8,3 +8,4 @@ export {default as Scrollbar} from './Scrollbar';
 export {default as Iconify} from './Iconify';
 export {default as SocialsButton} from './SocialsButton';
 export {default as Page} from './Page';
+export {default as Image} from './Image';

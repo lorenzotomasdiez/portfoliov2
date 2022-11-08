@@ -77,7 +77,7 @@ const HomeHero = () => {
 
                   <m.div variants={varFade().inRight}>
                     <Typography variant="overline" sx={{ color: 'common.white' }}>
-                      Make your product idea real
+                      Make real your product idea 
                     </Typography>
                   </m.div>
 
