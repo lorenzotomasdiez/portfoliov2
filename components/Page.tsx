@@ -21,4 +21,6 @@ const Page = React.forwardRef<HTMLDivElement, Props>(({ children, title = '', me
   </>
 ));
 
+Page.displayName = "Page"
+
 export default Page;

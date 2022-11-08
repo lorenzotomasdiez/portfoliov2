@@ -23,7 +23,7 @@ export default function MenuMobile({ isOffset, isHome, navConfig }: MenuProps) {
     if (drawerOpen) {
       handleDrawerClose();
     } 
-  }, [pathname]);
+  }, [pathname]); //eslint-disable-line
   
   const handleDrawerOpen = () => {
     setDrawerOpen(true);
