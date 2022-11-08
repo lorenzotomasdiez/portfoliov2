@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { forwardRef, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import { Box, BoxProps } from '@mui/material';
 
 interface Props extends BoxProps {
@@ -8,7 +8,7 @@ interface Props extends BoxProps {
   title: string;
 }
 
-const Page = forwardRef<HTMLDivElement, Props>(({ children, title = '', meta, ...other }, ref) => (
+const Page = React.forwardRef<HTMLDivElement, Props>(({ children, title = '', meta, ...other }, ref) => (
   <>
     <Head>
       <title>{`${title} | TCODE`}</title>

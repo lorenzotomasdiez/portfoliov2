@@ -1,4 +1,4 @@
-import { FC, forwardRef } from 'react';
+import { FC } from 'react';
 import NextLink from 'next/link';
 import { useTheme } from '@mui/material/styles';
 import { Box, BoxProps } from '@mui/material';

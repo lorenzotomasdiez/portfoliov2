@@ -1,7 +1,7 @@
 import NextLink from 'next/link'
 import { m } from "framer-motion";
-import { Box, Button, Container, Stack, StackProps, styled, Typography } from "@mui/material";
-import { Iconify, MotionContainer, varFade } from "../../components"
+import { Box, Button, Container, Grid, Stack, StackProps, styled, Tooltip, Typography } from "@mui/material";
+import { Iconify, MotionContainer, varFade } from "../../components";
 
 const RootStyle = styled(m.div)(({ theme }) => ({
   position: 'relative',
@@ -17,19 +17,13 @@ const RootStyle = styled(m.div)(({ theme }) => ({
   },
 }));
 
-const ContentStyle = styled((props: StackProps) => <Stack spacing={5} {...props} />)(
+const ContentStyle = styled((props: StackProps) => <Stack spacing={2} {...props} />)(
   ({ theme }) => ({
-    zIndex: 10,
-    maxWidth: 520,
-    margin: 'auto',
-    textAlign: 'center',
-    position: 'relative',
-    paddingTop: theme.spacing(15),
-    paddingBottom: theme.spacing(15),
-    [theme.breakpoints.up('md')]: {
-      margin: 'unset',
-      textAlign: 'left',
-    },
+    position:'relative',
+    zIndex:10,
+    maxWidth:'1220px',
+    margin:'auto',
+    padding:theme.spacing(15, 5),
   })
 );
 
@@ -42,22 +36,25 @@ const HeroOverlayStyle = styled(m.img)({
 });
 
 const HeroImgStyle = styled(m.img)(({ theme }) => ({
-  top: 0,
-  left:0,
-  right: 0,
-  bottom: 0,
-  zIndex: 8,
-  width: '80%',
-  margin: 'auto',
-  position: 'absolute',
+  display:'none',
+  maxWidth:'314px',
+  maxHeight:'190px',
   [theme.breakpoints.up('md')]: {
+    display:'block',
+    top: 0,
+    zIndex: 8,
+    margin: 'auto',
+    position: 'absolute',
+    bottom:100,
     left:'auto',
-    right: '8%',
+    right: '10%',
     width: 'auto',
-    height: '28vh',
   },
+  [theme.breakpoints.up('xl')]:{
+    right:'25%'
+  }
 }));
-
+const ICON_NAMES = [{name:"React" ,icon:'akar-icons:react-fill'}, {name:"MongoDB" ,icon:'bxl:mongodb'}, {name:"NodeJS" ,icon:'akar-icons:node-fill'}, {name:"Docker" ,icon:'bxl:docker'}, {name:"Redux" ,icon:'akar-icons:redux-fill'}, {name:"MUI" ,icon:'simple-icons:mui'}]
 const HomeHero = () => {
   return (
     <MotionContainer>
@@ -68,59 +65,66 @@ const HomeHero = () => {
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/800px-Nextjs-logo.svg.png"
           variants={varFade().inUp}
         />
-        <Container>
-          <ContentStyle>
-          <m.div variants={varFade().inRight}>
-              <Typography variant="h1" sx={{ color: 'common.white' }}>
-                new project <br /> with
-                <Typography component="span" variant="h1" sx={{ color: 'primary.main' }}>
-                  &nbsp;Minimal
-                </Typography>
-              </Typography>
-            </m.div>
+        <ContentStyle>
+          <Grid container spacing={3}>
+            <Grid item xs={12} md={7} sx={{textAlign:{xs:'center', md:'left'}}}>
+                <Stack spacing={3}>
+                  <m.div variants={varFade().inRight}>
+                    <Typography variant="h1" component="h1" sx={{ color: 'common.white' }}>
+                      Start your new project
+                    </Typography>
+                  </m.div>
 
-            <m.div variants={varFade().inRight}>
-              <Typography sx={{ color: 'common.white' }}>
-                The starting point for your next project based on easy-to-customize MUI helps you
-                build apps faster and better.
-              </Typography>
-            </m.div>
+                  <m.div variants={varFade().inRight}>
+                    <Typography variant="overline" sx={{ color: 'common.white' }}>
+                      Make your product idea real
+                    </Typography>
+                  </m.div>
 
-            <m.div variants={varFade().inRight}>
-              <NextLink href={'/hola'} passHref>
-                <Button
-                  size="large"
-                  variant="contained"
-                  startIcon={<Iconify icon={'eva:flash-fill'} width={20} height={20} />}
-                >
-                  Live Preview
-                </Button>
-              </NextLink>
-            </m.div>
+                  <m.div variants={varFade().inRight}>
+                    <NextLink href={'/contact'} passHref>
+                      <Button
+                        size="large"
+                        variant="contained"
+                        startIcon={<Iconify icon={'eva:flash-fill'} width={20} height={20} />}
+                      >
+                        Contact Me
+                      </Button>
+                    </NextLink>
+                  </m.div>
+                </Stack>
+              
+            </Grid>
+            <Grid item xs={12} md={5} sx={{textAlign:'right'}}>
+                <Box display="flex" flexDirection={'column'} justifyContent="flex-end" alignItems="flex-end" sx={{height:'100%'}}>
+                  <m.div variants={varFade().inLeft}>
+                    <Typography variant="overline" sx={{ color: 'secondary.light' }}>
+                      Main Technologies
+                    </Typography>
+                  </m.div>
 
-            <Stack spacing={2.5}>
-              <m.div variants={varFade().inRight}>
-                <Typography variant="overline" sx={{ color: 'primary.light' }}>
-                  Available For
-                </Typography>
-              </m.div>
-
-              <Stack
-                direction="row"
-                spacing={1.5}
-                justifyContent={{ xs: 'center', md: 'flex-start' }}
-              >
-                {['ic_sketch', 'ic_figma', 'ic_js', 'ic_ts', 'ic_nextjs'].map((resource) => (
-                  <m.img
-                    key={resource}
-                    variants={varFade().inRight}
-                    src={`https://minimal-assets-api-dev.vercel.app/assets/images/home/${resource}.svg`}
-                  />
-                ))}
-              </Stack>
-            </Stack>
-          </ContentStyle>
-        </Container>
+                  <Stack
+                    direction="row"
+                    spacing={1.5}
+                    justifyContent={{ xs: 'center', md: 'flex-end' }}
+                  >
+                    {ICON_NAMES.map((resource) => (
+                      <m.div
+                        key={resource.name}
+                        variants={varFade().inLeft}
+                      >
+                        <Tooltip title={resource.name}>
+                          <Box>
+                            <Iconify icon={resource.icon} color="secondary.main" width="40px" height="40px"/>
+                          </Box>
+                        </Tooltip>
+                      </m.div>
+                    ))}
+                  </Stack>
+                </Box>
+            </Grid>
+          </Grid>
+        </ContentStyle>
       </RootStyle>
       <Box sx={{ height: { md: '100vh' } }} />
     </MotionContainer>
